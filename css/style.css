@@ -1,0 +1,172 @@
+:root {
+  --main-bg: hsl(217, 54%, 11%);
+  --card-bg: hsl(216, 50%, 16%);
+  --line-color: hsl(215, 32%, 27%);
+  --text-color: hsl(215, 51%, 70%);
+  --active-color: hsl(178, 100%, 50%);
+  --active-color-filter: hsla(178, 100%, 50%, 50%);
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 26px;
+  min-height: 100vh;
+  height: 900px;
+  width: 100vw;
+  background-color: var(--main-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+hr {
+  margin-top: 24px;
+  height: 1px;
+  background-color: var(--line-color);
+}
+
+.container {
+  width: 320px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.main-card {
+  padding: 24px 0 32px 0;
+  background-color: var(--card-bg);
+  width: 350px;
+  height: 596px;
+  box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.0952917);
+  border-radius: 15px;
+}
+
+.card_image {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.card_image::before {
+  content: url(../images/icon-view.svg);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--active-color-filter);
+  opacity: 0;
+  border-radius: 6px;
+  transition: opacity 0.2s ease;
+}
+.card_image:hover::before {
+  opacity: 1;
+}
+
+.card_image img {
+  border-radius: 6px;
+}
+
+.card_content {
+  margin-top: 25px;
+}
+
+.card-title {
+  color: #fff;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.card-title:hover {
+  color: var(--active-color);
+}
+
+.card-text {
+  margin-top: 16px;
+  color: var(--text-color);
+}
+
+.card_info {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.card-price {
+  color: var(--active-color);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  margin-left: 16px;
+}
+
+.card-price::before {
+  content: "";
+  background-image: url(../images/icon-ethereum.svg);
+  display: block;
+  margin-right: 10px;
+  width: 11px;
+  height: 18px;
+  position: absolute;
+  top: 2px;
+  left: -1px;
+}
+
+.card-time {
+  color: var(--text-color);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.card-time::before {
+  content: "";
+  background-image: url(../images/icon-clock.svg);
+  display: block;
+  margin-right: 10px;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 2px;
+  right: 73px;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+  column-gap: 16px;
+}
+
+.author_image img {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+.author_info {
+  color: var(--text-color);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.author_info span {
+  color: #fff;
+  cursor: pointer;
+  margin-left: 2px;
+}
+
+.author_info span:hover {
+  color: var(--active-color);
+}
